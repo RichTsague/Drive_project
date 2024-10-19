@@ -5,7 +5,7 @@ def home(request):
     return render(request, 'home.html')  # Cela doit être correct
     
 def login_view(request):
-    return HttpResponse("Ceci est la page de connexion.")
+    return render(request, 'login.html')
 
 def signin_view(request):
-    return HttpResponse("Ceci est la page d'inscription.")
+    return render(request, 'signin.html')
