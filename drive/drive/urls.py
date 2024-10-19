@@ -21,5 +21,11 @@ from . import views  # Importation des vues définies
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),  # Lien vers la vue 'home'
+    path('', views.home, name='home'),  # Change cette ligne pour rediriger vers la page d'accueil
+    path('login/', views.login_view, name='login'),
+    path('signin/', views.signin_view, name='signin'),
+    # autres routes
 ]
+
+
+
