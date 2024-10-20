@@ -1,12 +1,15 @@
-<!-- django_demo1/templates/home.html -->
 {% load static %}
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DriveMe - Login</title>
+    <title>DriveMe</title>
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
         .navbar {
             position: fixed;
             top: 0;
@@ -33,51 +36,16 @@
             color: black;
             border-radius: 15px;
         }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .login-container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
-        .login-container h2 {
-            margin-bottom: 20px;
-        }
-        .login-container input {
-            width: calc(100% - 22px); /* Adjust width to fit within the container */
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #0056b3;
+        .content {
+            padding: 60px 20px;
         }
     </style>
 </head>
 <body>
     <div class="navbar">
         <div class="left">
-            <a href="{% url 'home' %}">
+            <a href="#home">
+                
                 <img src="{% static 'img/logo.png' %}" alt="Logo" style="vertical-align: middle; margin-right: 8px;width: 40px;height: 40px;text-align: left;">
                 Drive<span style="color: rgb(64, 115, 255);">Me</span>
             </a>
@@ -86,13 +54,16 @@
             <a href="javascript:void(0);" onclick="toggleMenu()" style="font-size: 24px;">&#x22EF;</a>
         </div>
     </div>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Mot de passe" required>
-            <button type="submit">Se connecter</button>
-        </form>
+    <div class="content" style="text-align: center;">
+        <div class="section" style="padding: 10px;">
+            <!-- Même chose ici pour les autres fichiers statiques -->
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXJ5M2dtNmRqN3hrNHNibG9xdGdsNWFpaDRjOGVmYXBpOGc2YzhsMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aufjKNUhiHKAPeCNlk/giphy.webp" alt="Description of image" style="max-width: 30%; height: 30%;">
+            <h1 style="margin-top: 20px; font-size: 86px;">Drive<span style="color: rgb(64, 115, 255);">Me</span></h1>
+            <div style="margin-top: 0px;">
+                <button style="padding: 10px 20px; margin: 5px;" onclick="window.location.href='{% url 'signin' %}'">Sign in</button>
+                <button style="padding: 10px 20px; margin: 5px;" onclick="window.location.href='{% url 'login' %}'">Login</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
